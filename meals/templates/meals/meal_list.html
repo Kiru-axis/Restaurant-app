@@ -1,0 +1,22 @@
+{%extends 'meals/base.html'%}
+{%load static%}
+{%block content%}
+<div class="container">
+    <!-- categories of the available meals-->
+    {% for category in categories %}
+    <div class="categories">
+        <ul class="">
+                <li class="nav-item"><a href="" class="cats">{{category.name}}</a></li>
+        </ul>
+        {% endfor %}
+    </div>
+    <h1>{{name}}</h1>
+    <!-- available meals -->
+    {%for meal in meal_lists%}
+    <h2 class=""><a href="{% url 'meals:meal_detail' meal.slug%}">{{meal.name}}</a></h2>
+    {%endfor%}
+    
+    
+</div>
+
+{%endblock%}
